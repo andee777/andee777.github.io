@@ -1,10 +1,158 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<title>Exemple AT</title>
+  <meta charset="UTF-8" />
+  <title>Question 5</title>
+  <style>
+      body {
+        background-color: linen;
+      }
+      h1 {
+        color: maroon;
+        margin-left: 40px;
+      }
+      label {
+        font-weight: bold;
+      }
+      #informations {
+        border-color: blue;
+        background-color: lightblue;
+      }
+      #recherche {
+        border-color: green;
+        background-color: lightgreen;
+      }
+      #legend1 {
+        color: blue;
+      }
+      #legend2 {
+        color: green;
+      }
+      #suggestions {
+        display: none;
+      }
+  </style>
+  <script>
+    var res;
+    var centreVrai = false;
+    var cinqDemiVrai = false;
+    var cinqDemiPlusVrai = false;
+    var prix = "<500";
+    function getSuggestions() {
+      document.getElementById("centreville").addEventListener("change", centreOn, false);
+      document.getElementById("cinqDemi").addEventListener("change", cinqDemiOn, false);
+      document.getElementById("cinqDemiPlus").addEventListener("change", cinqDemiPlusOn, false);
+      document.getElementById("prix").addEventListener("change", prixChange, false);
+      res = document.getElementById("resultats");
+    }
+    function prixChange() {
+      prix = document.getElementById("prix").value;
+      verifier();
+    }
+    function cinqDemiOn() {
+      cinqDemiVrai = !cinqDemiVrai;
+      verifier();
+    }
+    function cinqDemiPlusOn() {
+      cinqDemiPlusVrai = !cinqDemiPlusVrai;
+      verifier();
+    }
+    function centreOn() {
+      centreVrai = !centreVrai;
+      verifier();
+    }
+    function verifier() {
+      if (centreVrai && (cinqDemiVrai || cinqDemiPlusVrai) && (prix == "<500")) {
+          document.getElementById("suggestions").style.display = "block";
+          res.innerHTML = "<p>Il est très difficile de trouver un appartement plus grand que 51/2 dans le centre-ville</p><p>Normalement un appartement de 4 ½ et plus coûte plus que 1000$ dans le centre-ville</p>";
+      }
+      else {
+          if (centreVrai && cinqDemiPlusVrai) {
+              document.getElementById("suggestions").style.display = "block";
+              res.innerHTML = "<p>Il est très difficile de trouver un appartement plus grand que 51/2 dans le centre-ville</p>";
+          }
+          else {
+              document.getElementById("suggestions").style.display = "none";
+          }
+      }
+    }
+    window.addEventListener ("load", getSuggestions, false);
+  </script>
 </head>
+
 <body>
-<p> Voici mon fichier ATOM </p>
+  <form>
+    <table>
+      <td>
+        <a href="https://www.enlpatricklopez.com/societe-de-menage/">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr32i5CX8i1GPXxqJUS5a6bRkLkNYKgZWTwv-MvzoQzyvWMho4">
+        </a>
+      </td>
+      <td>
+        <h1>Le formulaire de recherche d'appartement de Karunanidhi</h1>
+      </td>
+    </table>
+
+    <fieldset id = "informations">
+      <legend id = "legend1"><label>Informations sur le(s) locataire(s)</label></legend>
+
+      <label>Combien de personnes vivront dans l'appartement? </label><input type="number" min="0" max="100" step="1"><br><br>
+
+      <label>Fumeur? </label><input type="radio" value="Oui"> Oui <input type="radio" value="Non"> Non<br><br>
+
+      <label>Des animaux?</label> <br>
+
+      <input type="checkbox"> Chat(s)<br>
+      <input type="checkbox"> Chien(s)<br>
+      <input type="checkbox"> Autres ... <label>Spécifier </label><input type="text" length="25"><br>
+      <input type="checkbox"> Pas d'animaux<br><br>
+
+    </fieldset>
+
+    <fieldset id = "recherche">
+      <legend id = "legend2"><label>Que cherchez vous?</label></legend>
+      <label>Taille de l'appartement:</label> <br>
+
+      <input type="checkbox"> Studio
+      <input type="checkbox"> 3.5
+      <input type="checkbox" id = "quatreDemi"> 4.5
+      <input type="checkbox" id = "cinqDemi"> 5.5
+      <input type="checkbox" id = "cinqDemiPlus"> Plus de 5.5 <br><br>
+
+      <label>Avez vous des emplacements préférés?</label> <br>
+
+      <input type="checkbox"> Ouest de l'ile
+      <input type="checkbox" id="centreville"> Centreville
+      <input type="checkbox"> Bas Westmount
+      <input type="checkbox"> NDG
+      <input type="checkbox"> Extremite est de l'ile
+      <input type="checkbox"> N'importe ou <br><br>
+
+      <label>Gamme de prix/mois:</label> <br>
+      <select id = "prix">
+          <option><500</option>
+          <option><1000</option>
+          <option><2000</option>
+          <option>Aucune limite de prix</option>
+      </select><br><br>
+
+
+      <label>Serait bien d'avoir</label> <br>
+
+      <input type="checkbox"> Cheminée
+      <input type="checkbox"> Laverie dans l'immeuble
+      <input type="checkbox"> Stationement interieur
+      <input type="checkbox"> Stationement exterieur
+      <input type="checkbox"> Balcon <br><br>
+
+    </fieldset>
+
+    <fieldset id = "suggestions">
+        <legend id = "legend3"><label>Suggestions d'experts</label></legend>
+        <p id="resultats"></p>
+    </fieldset>
+
+    <br>Voyons voir ce que nous pouvons trouver ...<br><br>
+    <input type="button" value="Chercher"> <input type="button" value="Recommencer">
+  </form>
 </body>
-</html>
