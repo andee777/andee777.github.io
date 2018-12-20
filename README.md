@@ -5,4 +5,4 @@ It's very easy to make some words **bold** and other words *italic* with Markdow
 
 The link for the page is https://andee777.github.io/
 
-..
+And, of course emoji! :sparkles: :camel: :boom:
