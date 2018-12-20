@@ -3,7 +3,7 @@ GitHub Pages is a static site hosting service designed to host your personal, or
 
 It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
 
-The link my page is https://andee777.github.io/
+The link to my page is: https://andee777.github.io/
 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 - [x] list syntax required (any unordered or ordered list supported)
