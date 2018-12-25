@@ -1,5 +1,7 @@
 body {
-  background: url("https://i.pinimg.com/originals/81/a1/2a/81a12afeaed6dacc09c94ccdfa75639f.jpg");
+  background: url("./bg.jpg");
+  background-repeat:no-repeat;
+  background-size:contain;
 }
 h2 {
   color:  #E98074;
