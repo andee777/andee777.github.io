@@ -1,7 +1,7 @@
 body {
   background: url("./bg.jpg");
   background-repeat:no-repeat;
-  background-size:initial;
+  background-size:100%;
 }
 h2 {
   color:  #E98074;
