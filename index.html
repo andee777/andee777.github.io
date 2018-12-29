@@ -34,18 +34,11 @@
         transform: scale(1.3, 1.3);
 
       }
-      @keyframes rot1 {
-    		0%   {transform: rotate(0deg) scale(1.3, 1.3);}
-    		33%  {transform: rotate(120deg) scale(1.3, 1.3);}
-    		67%  {transform: rotate(240deg) scale(1.3, 1.3);}
-    		100% {transform: rotate(360deg) scale(1.3, 1.3);}
-    	}
+
       #k_icon:hover {
-        animation-name: rot1;
-    		animation-duration: 1.5s;
-    		animation-timing-function: linear;
-    		animation-iteration-count: infinite;
-        animation-direction: reverse;
+        transform: scale(1, 1);
+        border: 2px solid black;
+
       }
 
       #git_icon {
