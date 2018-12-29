@@ -31,28 +31,32 @@
       #k_icon {
         width: 40px;
         height: 40px;
-        transform: scale(1.3, 1.3);
-
+        animation-name: rot1;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        }
+      @keyframes rot1 {
+        0%   {transform: rotate(0deg) scale(1.3, 1.3);}
+        33%  {transform: rotate(120deg) scale(1.3, 1.3);}
+        67%  {transform: rotate(240deg) scale(1.3, 1.3);}
+        100% {transform: rotate(360deg) scale(1.3, 1.3);}
       }
-
       #k_icon:hover {
-        transform: scale(1.3, 1.3) rotate(180deg);
-        border: 2px double black;
+        border: 2px solid black;
       }
-
       #git_icon {
         width: 40px;
-    		height: 40px;
-    		object-fit: contain;
-    		border-radius: 25px;
-    		border: 2px solid white;
-    		transform: scale(1.6, 1.6);
+        height: 40px;
+        object-fit: contain;
+        border-radius: 25px;
+        border: 2px solid white;
+        transform: scale(1.6, 1.6);
       }
       #git_icon:hover {
         transform: scale(1.3, 1.3);
         border: 2px solid rgb(0, 121, 204);
       }
-
 
   </style>
 </head>
