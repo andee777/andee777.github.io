@@ -37,7 +37,12 @@
     		animation-iteration-count: infinite;
         animation-direction: reverse;
       }
-
+      @keyframes rot1 {
+    		0%   {transform: rotate(0deg) scale(1.3, 1.3);}
+    		33%  {transform: rotate(120deg) scale(1.3, 1.3);}
+    		67%  {transform: rotate(240deg) scale(1.3, 1.3);}
+    		100% {transform: rotate(360deg) scale(1.3, 1.3);}
+    	}
       #k_icon:hover {
         border: 2px solid black;
       }
@@ -53,12 +58,7 @@
       #git_icon:hover {
         transform: scale(1.8, 1.8);
       }
-      @keyframes rot1 {
-    		0%   {transform: rotate(0deg) scale(1.3, 1.3);}
-    		33%  {transform: rotate(120deg) scale(1.3, 1.3);}
-    		67%  {transform: rotate(240deg) scale(1.3, 1.3);}
-    		100% {transform: rotate(360deg) scale(1.3, 1.3);}
-    	}
+
 
   </style>
 </head>
