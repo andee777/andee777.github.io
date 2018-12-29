@@ -33,7 +33,10 @@
         height: 40px;
       }
       #k_icon:hover {
-        transform: scale(1.3, 1.3);
+        animation-name: rot1;
+    		animation-duration: 1.5s;
+    		animation-timing-function: linear;
+    		animation-iteration-count: infinite;
 
       }
       #git_icon {
@@ -45,14 +48,22 @@
     		transform: scale(1.6, 1.6);
       }
       #git_icon:hover {
-        transform: rotate(125deg);
+        transform: rotate(125deg) scale(1.6, 1.6);
       }
+      @keyframes rot1 {
+        0%   {transform: rotate(0deg) scale(1.3, 1.3);}
+        25%  {transform: rotate(90deg) scale(1.3, 1.3);}
+        50%  {transform: rotate(180deg) scale(1.3, 1.3);}
+        75%  {transform: rotate(270deg) scale(1.3, 1.3);}
+        100% {transform: rotate(360deg) scale(1.3, 1.3);}
+      }
+
   </style>
 </head>
 
 <body>
   <div id="wrap">
-    <nav class="navbar navbar-expand-sm text-primary" style="border: none; border-radius: 0; background-color:rgba(255, 255, 255, 0.9);">
+    <nav class="navbar navbar-expand-sm navbar-light" style="border: none; border-radius: 0; background-color:rgba(255, 255, 255, 0.9);">
       <div class="container-fluid">
         <div class="position-fixed-right">
           <a class="navbar-brand" href="http://159.89.120.104/"><img id="k_icon" src="./k.png" class="rounded-circle"></a>
