@@ -95,9 +95,9 @@
   <script>
   loadPage();
   async function loadPage() {
-    let address = 'http://159.89.120.104/';
+    let address = 'http://159.89.120.104/sale_sys/items';
     let response = await fetch(address);
-    let res = await response.html();
+    let res = await response.json();
     console.log(res);
   }
 
